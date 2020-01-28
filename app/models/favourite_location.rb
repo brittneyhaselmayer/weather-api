@@ -1,4 +1,4 @@
 class FavouriteLocation < ApplicationRecord
   belongs_to :user
-  validates :area, uniqueness: { scope: [:medium, :another_medium] }
+  validates_uniqueness_of :user_id, :scope => [:area, :state]
 end
